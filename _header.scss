@@ -1,0 +1,106 @@
+@use "reset.scss" as mixin;
+
+
+/* navbar styles  */
+.container {
+  display: flex;
+  flex-direction: column;
+  max-height: 100vh;
+}
+
+.header, .category-list {
+  position: sticky;
+  top: 0;
+  background-color: mixin.$white-color;
+  z-index: 10;
+}
+
+.navbar {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem 1rem;
+}
+
+// display flex every section
+.navbar :where(.nav-logo, .nav-section, .search-form) {
+  display: flex;
+}
+
+.navbar .nav-section {
+  gap: 1rem;
+}
+
+//size everything
+.navbar :where(.logo-image, .user-image) {
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+  border-radius: 50%;
+}
+
+// icons style
+.navbar .nav-button {
+  border: none;
+  cursor: pointer;
+  height: 40px;
+  width: 40px;
+  background-color: transparent;
+  border-radius: 50%;
+}
+
+.navbar .nav-button:hover {
+  background-color: mixin.$light-gray-color;
+}
+
+.navbar .nav-button i {
+  display: flex;
+  font-size: 1.5rem;
+  align-items: center;
+  justify-content: center;
+}
+
+// logo style
+.navbar .nav-logo {
+  display: flex;
+  gap: 0.5rem;
+  text-decoration: none;
+}
+
+.navbar .nav-logo .logo-text {
+  font-size: 1.25rem;
+  color: var(--black-color);
+}
+
+//search styles
+.navbar .nav-center {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  width: 100%;
+}
+
+.navbar .search-form {
+  max-width: 550px;
+  flex: 1;
+  height: 40px;
+}
+
+.navbar .search-form input {
+  width: 100%;
+  height: 100%;
+  padding: 0 1rem;
+  outline: none;
+  font-size: 1rem;
+  border-radius: 3.1rem 0 0 3.1rem;
+  border: 1px solid mixin.$border-color;
+}
+
+.navbar .search-form .search-button {
+  width: auto;
+  padding: 0 1.25rem;
+  border-radius: 0 3.1rem 3.1rem 0;
+  border: 1px solid mixin.$border-color;
+  border-left: 0;
+}

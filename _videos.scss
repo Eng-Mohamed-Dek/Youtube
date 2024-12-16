@@ -1,0 +1,51 @@
+@use "reset.scss" as mixin;
+
+.video-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1rem;
+    .video-card {
+        .thumnail-container {
+            position: relative;
+            .duration {
+                position: absolute;
+                bottom: 0.8rem;
+                right: 0.75rem;
+                color: white;
+                background-color: #000;
+                padding: 0 0.3rem;
+                border-radius: .3rem;
+            }
+            .thumnail {
+                width: 100%;
+                aspect-ratio: 16 / 9;
+                border-radius: 0.5rem;
+            }
+        }
+
+        .icon {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+        }
+
+        .video-info {
+            display: flex;
+            gap: 0.7rem;
+            padding: 0.7rem 0.5rem;
+
+            .title {
+                font-size: .95rem;
+                font-weight: 600;
+                display: -webkit-box;
+                -webkit-box-orient: vertical;
+                -webkit-line-clamp: 2;
+                overflow: hidden;
+            }
+            .title:hover {
+                color: mixin.$primary-color;
+                cursor: pointer;
+            }
+        }
+    }
+}
